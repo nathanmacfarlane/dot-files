@@ -21,6 +21,7 @@ export PATH=$PATH:/usr/local/mysql/bin
 alias gs="git status"
 alias gnb="git checkout -b"
 alias gpu="git push origin"
+alias cat="bat"
 # projects
 alias 431="cd $HOME/School/CSC431/compiler-false-false"
 alias take="cd $HOME/School/CSC436/Take"
@@ -30,6 +31,7 @@ alias weather="curl wttr.in"
 set clipboard=unnamed
 # open vim sesson
 alias vsl="vim -S ~/.vim_session"
+alias c="clear"
 
 
 # Minimal zsh theme
