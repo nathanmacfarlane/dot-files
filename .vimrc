@@ -100,6 +100,8 @@ syntax on
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 Plugin 'VundleVim/Vundle.vim'
 " Plugin 'haya14busa/incsearch.vim'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -127,13 +129,15 @@ filetype plugin on
 
 let NERDTreeMapOpenInTab='<ENTER>' " opens nerd tree files in new tab
 
-set encoding=UTF8
+set encoding=UTF-8
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = ''
 
 colorscheme xcode_dark
+
+silent! nmap <C-P> :GFiles<CR>
 
 " Rainbow-Paren Config
 let g:rbpt_colorpairs = [
