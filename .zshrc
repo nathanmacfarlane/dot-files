@@ -7,9 +7,7 @@ ZSH_THEME="sorin"
 plugins=(
   git
   zsh-autosuggestions
-  zsh-syntax-highlighting
   web-search
-  osx
   colored-man-pages
 )
 
@@ -17,6 +15,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/mysql/bin:$PATH"
 export PATH=$PATH:/usr/local/mysql/bin
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # git 
 alias gs="git status"
 alias gnb="git checkout -b"
