@@ -9,18 +9,21 @@ plugins=(
   zsh-autosuggestions
   web-search
   colored-man-pages
+  zsh-syntax-highlighting
 )
 
 # zsh
 source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/mysql/bin:$PATH"
 export PATH=$PATH:/usr/local/mysql/bin
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 # git 
 alias gs="git status"
+alias gst="git stash --include-untracked"
 alias gnb="git checkout -b"
 alias gpu="git push origin"
 alias cat="bat"
+alias gundo="git reset HEAD~1"
 # projects
 alias 431="cd $HOME/School/CSC431/compiler-false-false"
 alias take="cd $HOME/School/CSC436/Take"
@@ -31,7 +34,6 @@ set clipboard=unnamed
 # open vim sesson
 alias vsl="vim -S ~/.vim_session"
 alias c="clear"
-
 
 # Minimal zsh theme
 # Requires Nerd Fonts for the icons
@@ -50,8 +52,18 @@ alias c="clear"
 # # Input in bold
 # zle_highlight=(default:bold)
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/nathanmacfarlane/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nathanmacfarlane/google-cloud-sdk/path.zsh.inc'; fi
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+# This loads nvm bash_completion
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/nathanmacfarlane/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nathanmacfarlane/google-cloud-sdk/completion.zsh.inc'; fi
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+# bun completions
+[ -s "/Users/nathanmacfarlane/.bun/_bun" ] && source "/Users/nathanmacfarlane/.bun/_bun"
